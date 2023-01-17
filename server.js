@@ -1,10 +1,13 @@
 require("dotenv/config")
 const express = require("express")
+const cors = require("cors")
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 const BASE_URL = "https://www.wolframcloud.com/obj/douglas.blumeyer"
 
 const server = express()
+
+server.use(cors)
 
 server.get("*", (req, res) => {
     let WolframCloudCall;

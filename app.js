@@ -15,7 +15,7 @@ app.get("*", (req, res) => {
         {},
     ).then(data => {
         res.send(data.data)
-    }).catch() // Wolfram works, but throws a 401 error every time. If uncaught, Render dies and doesn't respond.
+    }).catch(e => {}) // Wolfram works, but throws a 401 error every time. If uncaught, Render dies and doesn't respond.
 })
 
 app.listen(process.env.PORT)

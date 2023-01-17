@@ -13,7 +13,9 @@ app.get("*", async (req, res) => {
     const {data} = await axios.post(
         HOST + req.url,
         {},
-    )
+    ).catch(error => {
+        console.log("Axios post error: ", error)
+    })
     res.send(data)
 })
 

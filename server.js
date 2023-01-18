@@ -60,8 +60,10 @@ server.get("*", (req, res) => {
         };
     })();
 
+    console.log("is this thing on?")
     const wcc = new WolframCloudCall();
     wcc.call(req.url, function(result) { 
+        console.log("result:", result)
         res.send(result)
     });
 })
